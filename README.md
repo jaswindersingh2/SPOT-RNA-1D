@@ -40,7 +40,7 @@ Usage
 **To run the SPOT-RNA-1D**
 
 ```
-python3 run.py --seq_file inputs/TS1_seqs.fasta --save_outputs outputs/
+./run.py --seq_file inputs/TS1_seqs.fasta --save_outputs outputs/
 ```
 
 Datasets
