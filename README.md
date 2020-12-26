@@ -43,6 +43,30 @@ Usage
 ./run.py --seq_file inputs/TS1_seqs.fasta --save_outputs outputs/
 ```
 
+**For more options to run SPOT-RNA-1D**
+```
+./run.py --help
+```
+
+`
+usage: use "python run.py --help" for more information
+
+SPOT-RNA-1D: RNA backbone torsion angle prediction
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --seq_file       Path to the input sequence fasta file
+                   default file: ./SPOT-RNA-1D/inputs/TS1_seqs.fasta
+  --save_outputs   Path to the folder for saving output
+                   default folder: ./SPOT-RNA-1D/outputs
+  --batch_size     Number of simultaneous prediction for multi sequence fasta file input
+                   default batch size: 10
+  --gpu            To run on GPU, specifiy GPU number. If only one GPU in the system specifiy 0
+                   default: -1 (no GPU)
+  --cpu            Specify number of cpu threads that SPOT-RNA can use
+                   default = 16
+`
+
 Datasets
 ----
 
