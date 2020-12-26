@@ -49,7 +49,7 @@ Usage
 ```
 
 ```
-usage: use "python run.py --help" for more information
+usage: use "./run.py --help" for more information
 
 SPOT-RNA-1D: RNA backbone torsion angle prediction
 
