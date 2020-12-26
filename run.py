@@ -16,6 +16,7 @@ parser.add_argument('--seq_file',default=base_path + '/inputs/TS1_seqs.fasta', t
 parser.add_argument('--save_outputs',default=base_path + '/outputs', type=str, help="Path to the folder for saving output\n" "default folder: " + base_path + "/outputs", metavar='')
 parser.add_argument('--batch_size',default=10, type=int, help="Number of simultaneous prediction for multi sequence fasta file input\n" "default batch size: 10", metavar='')
 parser.add_argument('--gpu', default=-1, type=int, help="To run on GPU, specifiy GPU number. If only one GPU in the system specifiy 0\n" "default: -1 (no GPU)\n", metavar='')
+parser.add_argument('--cpu',default=16, type=int, help="Specify number of cpu threads that SPOT-RNA can use\n" "default = 16\n", metavar='')
 args = parser.parse_args()
 
 class bcolors:
@@ -27,6 +28,9 @@ class bcolors:
     BOLD    = "\033[;1m"
     REVERSE = "\033[;7m"
 
+NUM_PARALLEL_EXEC_UNITS = args.cpu
+os.environ['OMP_NUM_THREADS'] = str(NUM_PARALLEL_EXEC_UNITS)
+os.environ['KMP_WARNINGS'] = '0'
 
 ########## mean and standard deviation of trainin data TR1 ####################
 norm_mu = [0.24416392, 0.19836862, 0.30642843, 0.24948534]
