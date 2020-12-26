@@ -11,7 +11,7 @@ start = time.time()
 
 base_path = os.path.dirname(os.path.realpath(__file__))
 
-parser = argparse.ArgumentParser(description='SPOT-RNA-1D: RNA backbone torsion angle prediction', usage='use "python %(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
+parser = argparse.ArgumentParser(description='SPOT-RNA-1D: RNA backbone torsion angle prediction', usage='use "./%(prog)s --help" for more information', formatter_class=RawTextHelpFormatter)
 parser.add_argument('--seq_file',default=base_path + '/inputs/TS1_seqs.fasta', type=str, help="Path to the input sequence fasta file\n" "default file: " + base_path + "/inputs/TS1_seqs.fasta", metavar='')
 parser.add_argument('--save_outputs',default=base_path + '/outputs', type=str, help="Path to the folder for saving output\n" "default folder: " + base_path + "/outputs", metavar='')
 parser.add_argument('--batch_size',default=10, type=int, help="Number of simultaneous prediction for multi sequence fasta file input\n" "default batch size: 10", metavar='')
