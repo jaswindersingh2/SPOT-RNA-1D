@@ -63,7 +63,7 @@ optional arguments:
                    default batch size: 10
   --gpu            To run on GPU, specifiy GPU number. If only one GPU in the system specifiy 0
                    default: -1 (no GPU)
-  --cpu            Specify number of cpu threads that SPOT-RNA can use
+  --cpu            Specify number of cpu threads that SPOT-RNA-1D can use
                    default = 16
 ```
 
