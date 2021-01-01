@@ -28,9 +28,6 @@ class bcolors:
     BOLD    = "\033[;1m"
     REVERSE = "\033[;7m"
 
-NUM_PARALLEL_EXEC_UNITS = args.cpu
-os.environ['OMP_NUM_THREADS'] = str(NUM_PARALLEL_EXEC_UNITS)
-os.environ['KMP_WARNINGS'] = '0'
 
 ########## mean and standard deviation of trainin data TR1 ####################
 norm_mu = [0.24416392, 0.19836862, 0.30642843, 0.24948534]
@@ -58,6 +55,11 @@ feat_dic = {}
 for i,I in enumerate(ids):
 	feat_dic[I] = np.concatenate([[(bases==base.upper()).astype(int)] if str(base).upper() in 'AUGC' else np.array([[0]*4]) for base in sequences[I]])  # one-hot encoding Lx4
 
+
+os.environ['KMP_WARNINGS'] = '0'
+os.environ["CUDA_VISIBLE_DEVICES"]= str(args.gpu)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 if args.gpu == -1:
 	config = tf.ConfigProto(intra_op_parallelism_threads=args.cpu, inter_op_parallelism_threads=args.cpu)
@@ -87,11 +89,6 @@ def get_data(sample_feat, ids, batch_size, i, norm_mu,norm_std):
 def sigmoid(x):
   return x#1 / (1 + np.exp(-x))
 
-
-##### soft placing of tensorflow model 
-config = tf.compat.v1.ConfigProto()
-config.allow_soft_placement=True
-config.log_device_placement=False
 
 print(bcolors.GREEN + '\nRunning SPOT-RNA-1D\n' + bcolors.RESET)
 
