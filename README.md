@@ -51,7 +51,7 @@ Usage
 ```
 usage: use "./run.py --help" for more information
 
-SPOT-RNA-1D: RNA backbone torsion angle prediction
+SPOT-RNA-1D: RNA backbone torsion and pseudotorsion angle prediction using dilated convolutional neural networks.
 
 optional arguments:
   -h, --help       show this help message and exit
@@ -65,6 +65,7 @@ optional arguments:
                    default: -1 (no GPU)
   --cpu            Specify number of cpu threads that SPOT-RNA-1D can use
                    default = 16
+
 ```
 
 Datasets
