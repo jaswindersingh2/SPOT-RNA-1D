@@ -59,11 +59,12 @@ for i,I in enumerate(ids):
 	feat_dic[I] = np.concatenate([[(bases==base.upper()).astype(int)] if str(base).upper() in 'AUGC' else np.array([[0]*4]) for base in sequences[I]])  # one-hot encoding Lx4
 
 
-########## GPU setting ##############
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-os.environ["CUDA_VISIBLE_DEVICES"]= str(args.gpu)
-
+if args.gpu == -1:
+	config = tf.ConfigProto(intra_op_parallelism_threads=args.cpu, inter_op_parallelism_threads=args.cpu)
+else:
+	config = tf.compat.v1.ConfigProto()
+	config.allow_soft_placement=True
+	config.log_device_placement=False
 
 
 def get_data(sample_feat, ids, batch_size, i, norm_mu,norm_std):
