@@ -40,7 +40,7 @@ Usage
 **To run the SPOT-RNA-1D**
 
 ```
-./run.py --seq_file inputs/TS1_seqs.fasta --save_outputs outputs/
+./run.py --seq_file datasets/TS1_seqs.fasta --save_outputs outputs/
 ```
 
 **For more options to run SPOT-RNA-1D**
@@ -56,7 +56,7 @@ SPOT-RNA-1D: RNA backbone torsion and pseudotorsion angle prediction using dilat
 optional arguments:
   -h, --help       show this help message and exit
   --seq_file       Path to the input sequence fasta file
-                   default file: ./SPOT-RNA-1D/inputs/TS1_seqs.fasta
+                   default file: ./SPOT-RNA-1D/datasets/TS1_seqs.fasta
   --save_outputs   Path to the folder for saving output
                    default folder: ./SPOT-RNA-1D/outputs
   --batch_size     Number of simultaneous prediction for multi sequence fasta file input
