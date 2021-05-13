@@ -1,8 +1,27 @@
-SPOT-RNA-1D: *RNA backbone torsion and pseudotorsion angle prediction using dilated convolutional neural networks.*
+SPOT-RNA-1D: *RNA Backbone Torsion and Pseudotorsion Angle Prediction using Dilated Convolutional Neural Networks*
 ====
+
+Contents
+----
+  * [Introduction](#introduction)
+  * [System Requirments](#system-requirments)
+  * [Installation](#installation)
+  * [Usage](#Usage)
+  * [Citation guide](#citation-guide)
+  * [Licence](#licence)
+  * [Contact](#contact)
+
+Introduction
+----
+RNA three-dimensional structure prediction has been relied on using predicted or experimentally determined secondary structure as restrains to reduce conformational sampling space. However, the secondary-structure restraints are limited to paired bases, and the conformational space of the ribose-phosphate backbone is still too large to be sampled efficiently. Here, we employed the dilated convolutional neural network to predict backbone torsion and pseudotorsion angles using a single RNA sequence as input. The method called SPOT-RNA-1D was trained on a high-resolution training dataset and tested on three independent, non-redundant, and high-resolution test sets. The proposed method yields substantially smaller mean absolute errors than the baseline predictors based on random predictions and based on helix conformations according to actual angle distributions. The mean absolute errors for three test sets range from 14◦ -44◦ for different angles, compared to 17◦ -62◦ by random prediction and 14◦ -58◦ by helix prediction. The method also accurately recovers the overall patterns of single or pairwise angle distributions. In general, torsion angles further away from the bases and associated with unpaired bases and paired bases involved in tertiary interactions are more difficult to predict. Compared to the best models in RNA-puzzles experiments, SPOT-RNA-1D yielded more accurate dihedral angles and, thus, are potentially useful as model quality indicators and restraints for RNA structure prediction as in protein structure prediction.
+
+|![](./docs/figure_1.png)
+|----|
+
 
 System Requirments
 ----
+
 
 **Hardware Requirments:**
 SPOT-RNA-1D predictor requires only a standard computer with around 32 GB RAM to support the in-memory operations for RNAs sequence length less than 2000.
@@ -61,7 +80,7 @@ optional arguments:
                    default folder: ./SPOT-RNA-1D/outputs
   --batch_size     Number of simultaneous prediction for multi sequence fasta file input
                    default batch size: 10
-  --gpu            To run on GPU, specifiy GPU number. If only one GPU in the system specifiy 0
+  --gpu            To run on GPU, specify GPU number. If only one GPU in the system specify 0
                    default: -1 (no GPU)
   --cpu            Specify number of cpu threads that SPOT-RNA-1D can use
                    default = 16
@@ -74,7 +93,7 @@ Citation guide
 
 **If you use SPOT-RNA-1D for your research please cite the following paper:**
 
-Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2021. RNA backbone torsion and pseudotorsion angle prediction using dilated convolutional neural networks.
+Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2021. RNA Backbone Torsion and Pseudotorsion Angle Prediction using Dilated Convolutional Neural Networks. Journal of Chemical Information and Modeling, In-press.
 
 Licence
 ----
@@ -83,5 +102,5 @@ Mozilla Public License 2.0
 
 Contact
 ----
-jaswinder.singh3@griffithuni.edu.au, yaoqi.zhou@griffith.edu.au
+jaswinder.singh3@griffithuni.edu.au, zhouyq@szbl.ac.cn
 
