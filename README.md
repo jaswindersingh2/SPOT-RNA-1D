@@ -93,7 +93,7 @@ Citation guide
 
 **If you use SPOT-RNA-1D for your research please cite the following paper:**
 
-Singh, J., Paliwal, K., Singh, J., Zhou, Y., 2021. RNA Backbone Torsion and Pseudotorsion Angle Prediction using Dilated Convolutional Neural Networks. Journal of Chemical Information and Modeling, In-press.
+Singh, J., Paliwal, K., Singh, J. and Zhou, Y., 2021. RNA backbone torsion and pseudotorsion angle prediction using dilated convolutional neural networks. Journal of Chemical Information and Modeling, 61(6), pp.2610-2622.
 
 Licence
 ----
